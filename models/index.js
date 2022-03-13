@@ -24,25 +24,7 @@ let sequelize;
 //desarrollo 
 sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-//produccion
-/*sequelize = new Sequelize(config.database, config.username, config.password, {
-    dialect: 'mysql',
-    host: '/cloudsql/poc-banco-estado:us-east1:bancoestado-my',
-    pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-    },
-    dialectOptions: {
-        socketPath: '/cloudsql/poc-banco-estado:us-east1:bancoestado-my'
-    },
-    logging: false,
-    operatorsAliases: 0
-});*/
-
-fs
-  .readdirSync(__dirname)
+fs.readdirSync(__dirname)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
